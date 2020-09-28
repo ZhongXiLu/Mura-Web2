@@ -1,0 +1,43 @@
+<div id="analyses" *ngFor="let analysis of analyses">
+  <div class="card" [ngClass]="{
+        'border-dark': !analysis.finished,
+        'border-success': analysis.finished && analysis.successful,
+        'border-danger': analysis.finished && !analysis.successful
+      }">
+    <h5 class="card-header">
+      {{ analysis.repoName }}
+      <ng-container *ngIf="!analysis.finished; then notFinished else finished"></ng-container>
+      <ng-template #notFinished>
+        <span class="badge badge-dark">currently analyzing</span>
+      </ng-template>
+      <ng-template #finished>
+        <ng-container *ngIf="analysis.successful; then successful else failed"></ng-container>
+        <ng-template #successful><span class="badge badge-success">finished</span></ng-template>
+        <ng-template #failed><span class="badge badge-danger">failed: {{ analysis.errorMessage }}</span></ng-template>
+      </ng-template>
+    </h5>
+    <div class="card-body">
+      <table class="table table-borderless">
+        <tr>
+          <td><b>Start time</b></td>
+          <td>{{ analysis.startTime }}</td>
+        </tr>
+        <tr>
+          <td><b>Git repository</b></td>
+          <td><a href="{{ analysis.repoName }}" target="_blank">{{ analysis.repoName }}</a></td>
+        </tr>
+        <ng-container *ngIf="analysis.finished">
+          <tr>
+            <td><b>Report link</b></td>
+            <td><a class="btn-link" role="button" (click)="fileService.getFile(analysis.repoName, analysis.report)">{{ analysis.report }}</a></td>
+          </tr>
+          <tr>
+            <td><b>Mutants link</b></td>
+            <td><a class="btn-link" role="button" (click)="fileService.getFile(analysis.repoName, analysis.mutants)">{{ analysis.mutants }}</a></td>
+          </tr>
+        </ng-container>
+      </table>
+    </div>
+  </div>
+  <br>
+</div>

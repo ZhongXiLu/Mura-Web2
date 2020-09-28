@@ -1,0 +1,20 @@
+<div class="container" style="margin-top: 5%; margin-bottom: 5%">
+    <h1>{{ title }}</h1>
+    <br>
+    <i>Web interface for <a href="https://github.com/ZhongXiLu/MuRa" target="_blank">MuRa</a></i>
+    <br><br>
+    <a class="btn btn-primary btn-lg" href="/submit" role="button">Start an Analysis</a>
+    <hr>
+    <!-- <#if message??>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        ${message}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    </#if> -->
+    <p>This page will refresh automatically, so keep an eye out for if your analysis has finished or not 😉</p>
+<!--     <div id="analyses">
+    </div> -->
+    <router-outlet></router-outlet>
+</div>
