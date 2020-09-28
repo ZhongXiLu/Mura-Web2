@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { AnalysisForm } from '../../models/analysis-form';
 import { AnalysisFormService } from '../../services/analysis-form.service';
 
@@ -12,7 +12,7 @@ export class AnalysisFormComponent implements OnInit {
 
     analysisForm: AnalysisForm = new AnalysisForm();
 
-    constructor(private route: ActivatedRoute, private router: Router, private analysisFormService: AnalysisFormService) {}
+    constructor(private router: Router, private analysisFormService: AnalysisFormService) {}
 
     ngOnInit(): void {}
 

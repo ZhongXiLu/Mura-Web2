@@ -9,8 +9,9 @@ describe('workspace-project App', () => {
   });
 
   it('should display welcome message', () => {
+    browser.ignoreSynchronization = true;
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('mura-web app is running!');
+    expect(page.getTitleText()).toEqual('MuRa Web Interface');
   });
 
   afterEach(async () => {
