@@ -33,6 +33,10 @@ jobs:
         run: docker build -t zhongxilu/mura-web  .
       - name: Run Docker container
         run: docker run --name mura-web -d -p 8080:8080 zhongxilu/mura-web:latest
+      - name: Docker container startup
+        uses: jakejarvis/wait-action@master
+        with:
+          time: '30s'
       - name: Install node dependencies
         working-directory: ./mura-web
         run: npm install

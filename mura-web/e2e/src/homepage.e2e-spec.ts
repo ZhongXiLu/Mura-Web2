@@ -9,7 +9,6 @@ describe('homepage', () => {
   });
 
   it('should display correct title', () => {
-    browser.ignoreSynchronization = true;
     homepage.navigateTo();
     expect(homepage.getTitleText()).toEqual('MuRa Web Interface');
   });
