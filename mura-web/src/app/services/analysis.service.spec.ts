@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpErrorResponse } from '@angular/common/http';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
 import { AnalysisService } from './analysis.service';
@@ -19,7 +19,6 @@ const mockResponse = [
 ]
 
 describe('AnalysisService', () => {
-  let httpClient: HttpClient;
   let httpTestingController: HttpTestingController;
   let service: AnalysisService;
 
@@ -28,7 +27,6 @@ describe('AnalysisService', () => {
       imports: [ HttpClientTestingModule ],
       providers: [ AnalysisService ]
     });
-    httpClient = TestBed.get(HttpClient);
     httpTestingController = TestBed.get(HttpTestingController);
     service = TestBed.inject(AnalysisService);
   });
