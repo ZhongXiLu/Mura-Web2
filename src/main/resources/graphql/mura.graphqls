@@ -1,0 +1,38 @@
+
+schema {
+    query: Query
+}
+
+type Query {
+    analyses: [Analysis]
+    analysis(repoName: String!): Analysis
+}
+
+type Mutation {
+    submit(analysisForm: AnalysisForm): String
+}
+
+input AnalysisForm {
+    gitRepo: String!
+    singleModule: Boolean!
+    module: String!
+    CK: Boolean!
+    CC: Boolean!
+    USG: Boolean!
+    H: Boolean!
+    LC: Boolean!
+    IMP: Boolean!
+    optimalWeights: Boolean!
+}
+
+type Analysis {
+    id: ID!
+    repoName: String!
+    gitRepo: String!
+    report: String!
+    mutants: String!
+    startTime: String!
+    finished: Boolean!
+    successful: Boolean!
+    errorMessage: String!
+}

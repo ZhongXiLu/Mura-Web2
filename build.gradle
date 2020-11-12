@@ -24,6 +24,10 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-freemarker:2.3.2.RELEASE'
+	implementation 'com.graphql-java-kickstart:graphql-spring-boot-starter:7.0.1'
+	implementation 'com.graphql-java-kickstart:graphiql-spring-boot-starter:7.0.1'
+	implementation 'com.graphql-java-kickstart:voyager-spring-boot-starter:7.0.1'
+	implementation 'com.graphql-java-kickstart:graphql-java-tools'
 	implementation 'org.postgresql:postgresql'
 	implementation 'org.eclipse.jgit:org.eclipse.jgit:5.4.2.201908231537-r'
 	implementation('com.github.mura:study:1.2.4') {
